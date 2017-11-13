@@ -33,3 +33,12 @@ beforeEach(function(done){
         done();
     });
 });
+
+//drop authors collection before each tests
+beforeEach(function(done){
+    mongoose.connection.collections.authors.drop().then(function(){
+        done();
+    }).catch(function(err){
+        done();
+    });
+});
